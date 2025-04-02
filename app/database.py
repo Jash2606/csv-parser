@@ -24,10 +24,9 @@ def init_db(app):
     """
     Initialize database connection with the Flask app
     """
-    # Validate connection when the app starts
+
     try:
         client = MongoClient(app.config['MONGO_URI'])
-        # Send a ping to confirm connection
         client.admin.command('ping')
         print("MongoDB connection successful!")
     except Exception as e:
